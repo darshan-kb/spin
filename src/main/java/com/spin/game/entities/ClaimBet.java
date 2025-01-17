@@ -19,15 +19,16 @@ public class ClaimBet {
     private Game game;
     @ManyToOne
     private Ticket ticket;
-    @ManyToOne
-    private User user;
+//    @ManyToOne
+//    private User user;
+    private String username;
 
-    public ClaimBet(boolean claimed, double amount, Bet bet, Game game, Ticket ticket, User user) {
+    public ClaimBet(boolean claimed, double amount, Bet bet, Game game, Ticket ticket, String username) {
         this.claimed = claimed;
         this.amount = amount;
         this.bet = bet;
         this.game = game;
         this.ticket = ticket;
-        this.user = user;
+        this.username = username;
     }
 }

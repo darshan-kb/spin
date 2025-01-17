@@ -1,12 +1,15 @@
 package com.spin.game.entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+//@Builder
 public class Ticket {
 
     @Id
@@ -19,8 +22,8 @@ public class Ticket {
 
     @ManyToOne
     private Game game;
-    @ManyToOne
-    private User user;
+    private String username;
+    private String externalId;
     @OneToMany(mappedBy = "ticket", cascade = CascadeType.REMOVE)
     private List<Bet> bets;
     @OneToMany(mappedBy = "ticket", cascade = CascadeType.REMOVE)
@@ -29,28 +32,28 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(long ticketId, LocalDateTime timestamp, double totalAmount, Game game, User user) {
+    public Ticket(long ticketId, LocalDateTime timestamp, double totalAmount, Game game, String username) {
         this.ticketId = ticketId;
         this.timestamp = timestamp;
         this.totalAmount = totalAmount;
         this.game = game;
-        this.user = user;
+        this.username = username;
     }
 
-    public Ticket(long ticketId, LocalDateTime timestamp, double totalAmount, Game game, User user, List<Bet> bets) {
+    public Ticket(long ticketId, LocalDateTime timestamp, double totalAmount, Game game, String username, List<Bet> bets) {
         this.ticketId = ticketId;
         this.timestamp = timestamp;
         this.totalAmount = totalAmount;
         this.game = game;
-        this.user = user;
+        this.username = username;
         this.bets = bets;
     }
 
-    public Ticket(LocalDateTime timestamp, double totalAmount, Game game, User user) {
+    public Ticket(LocalDateTime timestamp, double totalAmount, Game game, String username) {
         this.timestamp = timestamp;
         this.totalAmount = totalAmount;
         this.game = game;
-        this.user = user;
+        this.username = username;
     }
 
     public long getTicketId() {
@@ -85,12 +88,12 @@ public class Ticket {
         this.game = game;
     }
 
-    public User getUser() {
-        return user;
+    public String getUser() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(String user) {
+        this.username = user;
     }
 
     public List<Bet> getBets() {
@@ -108,7 +111,7 @@ public class Ticket {
                 ", timestamp=" + timestamp +
                 ", totalAmount=" + totalAmount +
 //                ", game=" + game +
-                ", user=" + user +
+                ", user=" + username +
                 ", bets=" + bets +
                 '}';
     }

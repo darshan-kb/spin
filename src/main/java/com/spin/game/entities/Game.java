@@ -15,7 +15,7 @@ public class Game {
     private LocalDateTime gameTimeStamp;
 
     private int resultValue;
-    private long totalAmount;
+    private double totalAmount;
     private boolean isGameOver;
     @OneToMany(mappedBy = "game", cascade = CascadeType.REMOVE)
     private List<Ticket> tickets;
@@ -63,11 +63,11 @@ public class Game {
         this.tickets = tickets;
     }
 
-    public long getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(long totalAmount) {
+    public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 
