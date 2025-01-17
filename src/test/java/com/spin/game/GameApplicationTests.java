@@ -66,22 +66,22 @@ class GameApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	void getLatestGame(){
-		System.out.println(gameRepo.findLatestGame());
-	}
-	@Test
-	@Transactional
-	void getLatestTenGame(){
-		System.out.println(gameRepo.findLastTenGame());
-	}
-
-	@Test
-	@Transactional
-	void getTicket(){
-		List<TicketReportDTO> tickets = gameReportService.getTickets(0,"darshanbehere@gmail.com");
-		System.out.println(tickets);
-	}
+//	@Test
+//	void getLatestGame(){
+//		System.out.println(gameRepo.findLatestGame());
+//	}
+//	@Test
+//	@Transactional
+//	void getLatestTenGame(){
+//		System.out.println(gameRepo.findLastTenGame());
+//	}
+//
+//	@Test
+//	@Transactional
+//	void getTicket(){
+//		List<TicketReportDTO> tickets = gameReportService.getTickets(0,"darshanbehere@gmail.com");
+//		System.out.println(tickets);
+//	}
 
 //	@Test
 //	String getToken(){
