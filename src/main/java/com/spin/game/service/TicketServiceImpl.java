@@ -70,6 +70,7 @@ public class TicketServiceImpl implements TicketService{
         return balance;
     }
 
+    @Transactional
     @Override
     public GameResponse addTicket(BetTransactionRequest betTransactionRequest) {
         if(!validationService.validateBetTransactionRequest(betTransactionRequest)){
