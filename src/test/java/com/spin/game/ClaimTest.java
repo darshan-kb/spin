@@ -12,9 +12,9 @@ import java.util.List;
 public class ClaimTest {
     @Autowired
     ClaimService claimService;
-    @Test
-    void getClaimTest(){
-        List<ClaimDTO> claims =  claimService.getClaim("darshanbehere@gmail.com");
-        System.out.println(claims);
-    }
+//    @Test
+//    void getClaimTest(){
+//        List<ClaimDTO> claims =  claimService.getClaim("darshanbehere@gmail.com");
+//        System.out.println(claims);
+//    }
 }

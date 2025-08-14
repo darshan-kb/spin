@@ -1,6 +1,6 @@
 package com.spin.game.service;
 
-import com.netflix.discovery.converters.Auto;
+//import com.netflix.discovery.converters.Auto;
 import com.spin.game.config.beans.Countdown;
 import com.spin.game.entities.Game;
 import com.spin.game.model.CountDownModel;

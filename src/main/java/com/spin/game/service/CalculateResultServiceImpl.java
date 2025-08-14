@@ -70,7 +70,7 @@ public class CalculateResultServiceImpl implements CalculateResultService{
     @Transactional
     public int getCurrentGameResultByValueMap(long id){
         List<Integer> validElements = new ArrayList<>();
-        long totalAmount = gameRepo.findById(id).orElseThrow(() -> new IllegalStateException("Game id not found")).getTotalAmount();
+        double totalAmount = gameRepo.findById(id).orElseThrow(() -> new IllegalStateException("Game id not found")).getTotalAmount();
         for(int i=0;i<37;i++){
             double totalRewardOni=0.0;
 
